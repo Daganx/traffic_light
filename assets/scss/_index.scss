@@ -1,0 +1,255 @@
+// PROPRIETE DU HEADER
+
+#index_top {
+  height: 90vh;
+
+  background-color: black;
+
+  display: flex;
+}
+
+#header_left {
+  height: 90vh;
+  width: 50vw;
+  border-right: 5px solid white;
+  border-bottom: 10px solid white;
+}
+
+#header_right {
+  height: 90vh;
+  width: 50vw;
+
+  background-image: url(../images/topBackground.jpg);
+  background-size: cover;
+  background-position: 50%;
+
+  border-left: 5px solid white;
+  border-bottom: 10px solid white;
+}
+
+.login_block {
+  margin-left: 1rem;
+}
+
+.login_block ul {
+  display: flex;
+  gap: 20px;
+}
+
+.login_block li {
+  border-bottom: 2px solid white;
+  padding-right: 0.5rem;
+}
+
+.login_block a {
+  color: white;
+  font-family: "RadhjaniMedium";
+  font-size: small;
+}
+
+.login_block a:hover {
+  color: #ffb636;
+}
+
+// CONFIG HEADER TEXTE...
+
+.header_text {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header_text_span {
+  color: #ffb636;
+}
+
+.header_text_span_2 {
+  color: #ffb636;
+}
+
+.header_text h1 {
+  color: white;
+
+  text-align: center;
+  font-size: 85px;
+
+  margin-top: 2rem;
+}
+
+.header_text p {
+  margin-left: 6rem;
+  padding-left: 1rem;
+
+  text-align: right;
+  font-size: 22px;
+  font-family: "Rajdhani_Medium";
+
+  color: white;
+
+  border-bottom: 2px solid white;
+}
+
+.header_text a {
+  color: white;
+  font-family: "Rajdhani_Medium";
+}
+
+.header_text a:hover {
+  color: #ffb636;
+}
+
+// FIN DU HEADER
+
+// BANNER HEADER
+
+#header_banner {
+  background-color: black;
+
+  height: 12vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.banner_text {
+  color: white;
+
+  font-size: 24px;
+  letter-spacing: 10px;
+
+  margin-top: 10px;
+}
+
+// GALLERY
+
+#gallery_container {
+  height: 80vh;
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+}
+
+// BLOCK LEFT CONTAINER
+
+.gallery_left_container {
+  height: 100%;
+  width: 70%;
+}
+
+// BLOCK LEFT TOP CONTAINER
+
+.left_container_top {
+  height: 60%;
+  width: 100%;
+
+  display: flex;
+}
+
+.left_top_first_picture {
+  width: 45%;
+  height: 100%;
+
+  background-image: url(../images/light_traffic2.jpg);
+  background-position: center;
+  background-size: cover;
+
+  margin-right: 10px;
+}
+
+.left_top_second_picture {
+  width: 55%;
+  height: 100%;
+
+  background-image: url(../images/topBackground.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+// BLOCK LEFT BOTTOM CONTAINER
+
+.left_container_bottom {
+  display: flex;
+
+  height: 40%;
+  width: 100%;
+
+  margin-top: 10px;
+}
+
+.left_bottom_first_picture {
+  background-image: url(../images/light_traffic8.jpg);
+  background-position: center;
+  background-size: cover;
+
+  width: 60%;
+  height: 100%;
+
+  margin-right: 5px;
+}
+
+.left_bottom_second_picture {
+  background-image: url(../images/light_traffic5.jpg);
+  background-position: center;
+  background-size: cover;
+
+  width: 40%;
+  height: 100%;
+
+  margin-left: 5px;
+}
+
+// BLOCK RIGHT CONTAINER
+
+.gallery_right_container {
+  height: 100%;
+  width: 30%;
+
+  margin-left: 10px;
+}
+
+// BLOCK RIGHT CONTAINER
+
+.gallery_right_container {
+  height: 100%;
+  width: 30%;
+}
+
+.right_picture {
+  background-image: url(../images/light_traffic6.jpg);
+  background-position: center;
+  background-size: cover;
+
+  height: 100%;
+  width: 100%;
+
+  padding-bottom: 10px;
+}
+
+#header_banner_footer {
+  background-color: black;
+
+  height: 12vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner_text_footer {
+  color: white;
+
+  font-size: 24px;
+  letter-spacing: 10px;
+
+  margin-top: 10px;
+}
