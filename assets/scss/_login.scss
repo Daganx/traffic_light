@@ -1,0 +1,93 @@
+#login_container {
+  height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  color: white;
+}
+
+.login_left {
+  width: 50%;
+
+  background-image: url(../images/lastBackground.jpg);
+  background-position: right;
+  background-size: cover;
+
+  margin-right: 5px;
+}
+
+.login_right {
+  width: 50%;
+
+  background-color: black;
+
+  margin-left: 5px;
+}
+
+.login_title {
+  text-align: center;
+  font-size: 70px;
+
+  margin-top: 2rem;
+
+  margin-bottom: 5rem;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.login_form_name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login_form_name label {
+  border-bottom: 2px solid white;
+}
+
+.login_form_name input {
+  border-radius: 20px;
+  border: none;
+  height: 40px;
+  text-align: center;
+  width: 200%;
+}
+
+label {
+  font-family: "Rajdhani_Medium";
+}
+
+input {
+  font-family: "Rajdhani_Medium";
+}
+
+button {
+  margin-top: 1rem;
+  font-family: "Rajdhani_Medium";
+}
+
+.login_form_password input {
+  border-radius: 20px;
+  border: none;
+  height: 40px;
+  text-align: center;
+  width: 200%;
+}
+.login_form_password {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login_form_password label {
+  border-bottom: 2px solid white;
+}

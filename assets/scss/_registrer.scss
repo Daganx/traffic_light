@@ -1,0 +1,108 @@
+#registrer_container {
+  height: 100vh;
+
+  display: flex;
+
+  color: white;
+}
+
+.registrer_left {
+  width: 50%;
+
+  background-image: url(../images/lastBackground.jpg);
+  background-position: right;
+  background-size: cover;
+
+  margin-right: 5px;
+}
+
+.registrer_right {
+  width: 50%;
+
+  background-color: black;
+
+  margin-left: 5px;
+}
+
+.registrer_title {
+  text-align: center;
+  font-size: 70px;
+
+  margin-top: 2rem;
+
+  margin-bottom: 5rem;
+}
+
+.registrer_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.registrer_form_confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.registrer_form_name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.registrer_form_name label {
+  border-bottom: 2px solid white;
+}
+
+.registrer_form_name input {
+  border-radius: 20px;
+  border: none;
+  height: 40px;
+  text-align: center;
+  width: 200%;
+}
+
+.registrer_form_password {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.registrer_form_password input {
+  border-radius: 20px;
+  border: none;
+  height: 40px;
+  text-align: center;
+  width: 200%;
+}
+
+.registrer_form_password label {
+  border-bottom: 2px solid white;
+}
+
+.registrer_form_confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.registrer_form_confirm input {
+  border-radius: 20px;
+  border: none;
+  height: 40px;
+  text-align: center;
+  width: 200%;
+}
+
+.registrer_form_confirm label {
+  border-bottom: 2px solid white;
+}
+
+#registrer_container > div.registrer_right > form > button {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
