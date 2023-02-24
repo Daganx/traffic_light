@@ -32,28 +32,26 @@
 // GALLERY 2+2
 
 #gallery_container_lt {
-
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
 }
 
-#articles_container{
-  border: 2px solid red;
+#articles_container {
   display: flex;
 
   margin-bottom: 10px;
 }
 
-.article_container{
+.article_container {
   border: 2px solid;
   width: 100%;
   height: 20%;
   position: relative;
 }
 
-.info_article{
+.info_article {
   display: flex;
   flex-direction: column;
 
@@ -67,25 +65,22 @@
   bottom: 10px;
   gap: 10px;
 
-
   background-color: #007f67;
   color: white;
 }
 
-.cityname_title{
+.cityname_title {
   font-size: 16px;
 }
 
-.upload_image{
+.upload_image {
   width: 100%;
   height: 20%;
 }
 
-.country_title{
+.country_title {
   font-size: 32px;
 }
-
-
 
 #comments_container {
   background-color: #007f67;

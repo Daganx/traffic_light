@@ -33,7 +33,7 @@ include_once('environment.php');
             </div>
             <div class="header_text">
                 <h1><span class="header_text_span">"</span><a href="lighttraffic.php">THE PLACE TO STOP ! <span
-                        class="header_text_span_2">"</span></h1>
+                            class="header_text_span_2">"</span></h1>
                 <p><a href="addlighttraffic.php">ADD YOUR OWN TRAFFIC LIGHT !</a></p>
             </div>
         </section>
