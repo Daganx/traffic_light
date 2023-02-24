@@ -1,3 +1,11 @@
+<?php
+include_once('environment.php');
+
+$request = $bdd->query('SELECT *,users.username AS author,  articles.id AS articlesid
+                        FROM articles
+                        LEFT JOIN users ON users_id = users.id');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,15 +22,23 @@
     <header id="index_top">
         <section id="header_left">
             <div class="login_block">
-                <ul>
-                    <li><a href="">Registrer</a></li>
-                    <li><a href="">Login</a></li>
-                </ul>
+                <?php if (isset($_SESSION['role'])): ?>
+                    <?php if ($_SESSION['role'] == 'ADMIN'): ?>
+                        <li><a href="admin/index.php">Gestion administrateur</a></li>
+                    <?php endif; ?>
+                <?php endif; ?>
+                <?php if (!isset($_SESSION['userName'])) { ?>
+                    <li><a href="registrer.php">Registrer</a></li>
+                    <li><a href="login.php">Login</a></li>
+                <?php } else { ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php } ?>
+
             </div>
             <div class="header_text header_text_traffic">
                 <h1>ADD YOUR OWN TRAFFIC LIGHT HERE !</h1>
                 <p>
-                    <a href="">CLICK HERE TO ADD YOURS !</a>
+                    <a href="addlighttraffic.php">CLICK HERE TO ADD YOURS !</a>
                 </p>
             </div>
         </section>
@@ -43,22 +59,31 @@
     <!-- FIN BANNER -->
 
     <section id="gallery_container_lt">
-        <div class="gallery_lt_top">
-            <div class="gallery_lt_top_left">
-                <img src="" alt="">
-            </div>
-            <div class="gallery_lt_top_right">
-                <img src="" alt="">
-            </div>
-        </div>
-        <div class="gallery_lt_bottom">
-            <div class="gallery_lt_bottom_left">
-                <img src="" alt="">
-            </div>
-            <div class="gallery_lt_bottom_right">
-                <img src="" alt="">
-            </div>
-        </div>
+        <?php while ($articles = $request->fetch()): ?>
+            <!-- <?php
+            // var_dump($articles)
+            ?> -->
+            <article id="articles_container">
+                <div class="article_container">
+                    <img style="object-fit: cover;" class="upload_image"
+                        src="assets/images/upload/<?= $articles['image']; ?>" alt="image de <?= $articles['cityname']; ?>">
+                    <div class="info_article">
+                        <h3 class="cityname_title">
+                            <?= $articles['cityname']; ?>
+                        </h3>
+                        <p class="country_title">
+                            <?= $articles['countryname']; ?>
+                        </p>
+                        <p class="coordonate_title">
+                            <?= $articles['coordonate']; ?>
+                        </p>
+                    </div>
+                </div>
+                <!-- ON VERIFIE SI LA VARIABLE DE SESSION EXISTE-->
+                <?php if (isset($_SESSION['userId'])): ?>
+                <?php endif ?>
+            </article>
+        <?php endwhile ?>
     </section>
 
     <!-- FIN GALLERY -->

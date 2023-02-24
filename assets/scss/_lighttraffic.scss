@@ -32,7 +32,6 @@
 // GALLERY 2+2
 
 #gallery_container_lt {
-  height: 100vh;
 
   margin-top: 10px;
   margin-left: 10px;
@@ -40,66 +39,53 @@
   margin-bottom: 20px;
 }
 
-.gallery_lt_top {
+#articles_container{
+  border: 2px solid red;
   display: flex;
 
-  height: 50%;
+  margin-bottom: 10px;
+}
+
+.article_container{
+  border: 2px solid;
   width: 100%;
+  height: 20%;
+  position: relative;
 }
 
-.gallery_lt_top_left {
-  width: 50%;
-  height: 100%;
-
-  background-image: url(../images/light_traffic1.jpg);
-  background-position: top;
-  background-size: cover;
-
-  margin-right: 5px;
-}
-
-.gallery_lt_top_right {
-  width: 50%;
-  height: 100%;
-
-  background-image: url(../images/light_traffic4.jpg);
-  background-position: center;
-  background-size: cover;
-
-  margin-left: 5px;
-}
-
-.gallery_lt_bottom {
+.info_article{
   display: flex;
+  flex-direction: column;
 
-  height: 50%;
-  margin-top: 10px;
+  position: absolute;
+
+  padding: 5px;
+
+  border-radius: 5px;
+
+  left: 10px;
+  bottom: 10px;
+  gap: 10px;
+
+
+  background-color: #007f67;
+  color: white;
 }
 
-.gallery_lt_bottom_left {
-  width: 50%;
-  height: 100%;
-
-  margin-right: 5px;
-
-  background-image: url(../images/light_traffic11.jpg);
-  background-size: cover;
-  background-position: center;
+.cityname_title{
+  font-size: 16px;
 }
 
-.gallery_lt_bottom_right {
-  width: 50%;
-  height: 100%;
-
-  margin-left: 5px;
-
-  background-image: url(../images/light_traffic10.jpg);
-  background-size: cover;
-  background-position: bottom;
+.upload_image{
+  width: 100%;
+  height: 20%;
 }
 
-// FIN GALLERY
-// SECTION COMMENTS
+.country_title{
+  font-size: 32px;
+}
+
+
 
 #comments_container {
   background-color: #007f67;

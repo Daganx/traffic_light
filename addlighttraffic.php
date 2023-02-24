@@ -1,3 +1,36 @@
+<?php
+include_once('environment.php');
+
+if (!isset($_SESSION['userName'])) {
+    header('Location:index.php');
+}
+
+if (isset($_POST['cityname']) && isset($_POST['countryname']) && isset($_POST['coordonate'])) {
+    $cityname = htmlspecialchars($_POST['cityname']);
+    $countryname = htmlspecialchars($_POST['countryname']);
+    $coordonate = htmlspecialchars($_POST['coordonate']);
+
+    if (isset($_FILES['image'])) {
+        // NOM DU FICHIER IMAGE
+        $image = $_FILES['image']['name'];
+        $imageTmp = $_FILES['image']['tmp_name']; // NOM TEMPORAIRE DU FICHIER IMAGE
+        $infoImage = pathinfo($image); //TABLEAU QUI DECORTIQUE LE NOM DE FICHIER
+        $extImage = $infoImage['extension']; //EXTENSION 
+        $imageName = $infoImage['filename']; //NOM DU FICHIER SANS L'EXTENSION
+        //GENERATION D'UN NOM DE FICHIER UNIQUE
+        $uniqueName = $imageName . time() . rand(1, 1000) . "." . $extImage;
+
+        move_uploaded_file($imageTmp, 'assets/images/upload/' . $uniqueName);
+    }
+
+    $request = $bdd->prepare('INSERT INTO articles(cityname,countryname,coordonate,image,users_id) 
+                             VALUES(?,?,?,?,?)');
+
+    $request->execute(array($cityname, $countryname, $coordonate, $uniqueName, $_SESSION['userId']));
+    header('Location: lighttraffic.php?success=1');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,16 +53,16 @@
         <div class="form_right">
             <form class="form_add" action="addlighttraffic.php" method="POST" enctype="multipart/form-data">
                 <div class="city_add">
-                    <label for="city">City</label>
-                    <input type="text" name="city" id="city">
+                    <label for="cityname">City</label>
+                    <input type="text" name="cityname" id="cityname">
                 </div>
                 <div class="country_add">
-                    <label for="country">Country</label>
-                    <input type="text" name="country" id="country">
+                    <label for="countryname">Country</label>
+                    <input type="text" name="countryname" id="countryname">
                 </div>
-                <div class="coordinate_add">
-                    <label for="coordinate">Coordinate</label>
-                    <input type="text" name="coordinate" id="coordinate">
+                <div class="coordonate_add">
+                    <label for="coordonate">Coordonate</label>
+                    <input type="text" name="coordonate" id="coordonate">
                 </div>
                 <div class="image_add">
                     <label for="image" class="displayNone"></label>

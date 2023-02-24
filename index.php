@@ -1,3 +1,7 @@
+<?php
+include_once('environment.php');
+?>
+
 <html lang="en">
 
 <head>
@@ -14,15 +18,23 @@
     <header id="index_top">
         <section id="header_left">
             <div class="login_block">
-                <ul>
-                    <li><a href="">Registrer</a></li>
-                    <li><a href="">Login</a></li>
-                </ul>
+                <?php if (isset($_SESSION['role'])): ?>
+                    <?php if ($_SESSION['role'] == 'ADMIN'): ?>
+                        <li><a href="admin/index.php">Gestion administrateur</a></li>
+                    <?php endif; ?>
+                <?php endif; ?>
+                <?php if (!isset($_SESSION['userName'])) { ?>
+                    <li><a href="registrer.php">Registrer</a></li>
+                    <li><a href="login.php">Login</a></li>
+                <?php } else { ?>
+                    <li><a href="logout.php">Logout</a></li>
+                <?php } ?>
+
             </div>
             <div class="header_text">
-                <h1><span class="header_text_span">"</span> THE PLACE TO STOP ! <span
+                <h1><span class="header_text_span">"</span><a href="lighttraffic.php">THE PLACE TO STOP ! <span
                         class="header_text_span_2">"</span></h1>
-                <p><a href="">ADD YOUR OWN TRAFFIC LIGHT !</a></p>
+                <p><a href="addlighttraffic.php">ADD YOUR OWN TRAFFIC LIGHT !</a></p>
             </div>
         </section>
         <section id="header_right">
@@ -32,7 +44,7 @@
 
     <section id="header_banner">
         <div class="banner_text">
-            <p>EXPLORE THE COMMUNITY COLLECTION</p>
+            <p><a href="lighttraffic.php"></a>EXPLORE THE COMMUNITY COLLECTION</p>
         </div>
     </section>
     <!-- FIN DU HEADER -->
